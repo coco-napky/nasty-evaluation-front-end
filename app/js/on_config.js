@@ -1,3 +1,4 @@
+
 function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compileProvider) {
   'ngInject';
 
