@@ -1,10 +1,47 @@
-<h1 class="heading -large">{{ home.title | ExampleFilter }}</h1>
-
-<h3 class="heading -medium">Here is a fancy number served up courtesy of Angular: <span class="number-example">{{ home.number }}</span></h3>
-
-<img src="images/angular.png" height="100" />
-<img src="images/gulp.png" height="100" />
-<img src="images/browserify.png" height="100" />
-
+<h1 class="heading -large">Users</h1>
 <hr/>
-<div example-directive title="WOW!" click-message="You clicked me!">Directive is not loaded.</div>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="0" id="usuario-id" type="text" class="validate"
+          		 ng-model="home.userId">
+          <label for="usuario-id">id</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Foo" id="usuario-nombre" type="text" class="validate"
+          		 ng-model="home.username">
+          <label for="usuario-nombre">Nombre</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="*******" id="usuario-password" type="text" class="validate"
+          		 ng-model="home.userPassword">
+          <label for="usuario-password">Password</label>
+        </div>
+      </div>
+      <div class="input-field col s6">
+          <input placeholder="foo@bar.com" id="usuario-email" type="text" class="validate"
+          		 ng-model="home.userEmail">
+          <label for="usuario-email">Email</label>
+        </div>
+      </div>
+      <a class="waves-effect waves-light btn" ng-click="home.postUsers()">Post</a>
+    </form>
+  </div>
+<hr/>
+
+<a class="waves-effect waves-light btn" ng-click="home.getUsers()">Get Users</a>
+
+<hr>
+<span>User list</span>
+<br>
+<ol>
+	<li ng-repeat="user in home.users">
+		 Id: {{user.id}} | Nombre: {{user.nombre}} | Correo : {{user.correo}}
+	</li>
+</ul>
+
