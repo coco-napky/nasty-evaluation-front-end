@@ -19,7 +19,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
   $stateProvider
   .state('Login', {
     url: '/',
-    controller: 'ExampleCtrl as ctrl',
+    controller: 'LogInCtrl as ctrl',
     templateUrl: 'login.html',
     title: 'Login'
   });
