@@ -10,27 +10,21 @@
       <ul class="left hide-on-med-and-down">
         <li><a href="index_actividades.html">Actividades</a></li>
         <li><a href="index_grupos.html">Grupos</a></li>
-
         <a class="btn-floating btn-large waves-effect waves-light blue-grey brand-logo right" href="/crear-grupo"><i class="material-icons">mode_edit</i></a>
       </ul>
     </div>
   </nav>
 
-
-
   <div class="row"> 
-    <div class="col s10 m4" ng-repeat="group in groupctrl.groups"  ng-cloak> 
+    <div class="col s10 m4" ng-repeat="group in ctrl.groups"  ng-cloak> 
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-        <!--
-        RELACIONAR EL MODAL CON EL ITEM CORRECTO
-      -->
       <div align="right">
         <a class="btn-floating btn-small waves-effect waves-light modal-trigger green" ng-click="modalTrigger()" href="#modalCrear">
           <i class="material-icons">mode_edit</i>
         </a>
 
-        <a class="btn-floating btn-small waves-effect waves-light red" ng-click="groupctrl.handleDeleteGroup($event)" data-group-id="{{group.id}}">
+        <a class="btn-floating btn-small waves-effect waves-light red" ng-click="ctrl.handleDeleteGroup($event)" data-group-id="{{group.id}}">
           <i class="material-icons">delete</i>
         </a>
       </div>
@@ -64,7 +58,7 @@
           <div class="row">
             <div class="input-field col s12">
               <a class='dropdown-button btn blue' href='#' data-activates='dropdown1'>Añadir Grupo</a>
-              <ul id='dropdown1' class='dropdown-content' ng-repeat="group in groupctrl.groups">
+              <ul id='dropdown1' class='dropdown-content' ng-repeat="group in ctrl.groups">
                 <li><a href="#!">{{group.name}}</a></li>
               </ul>
             </div>
