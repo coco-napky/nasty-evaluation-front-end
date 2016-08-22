@@ -6,27 +6,21 @@ function ActivityCtrl(ActivitiesService) {
 
   vm.activities = [];
 
-  console.log(vm.activities);
-
   vm.getActivities = () => ActivitiesService.getActivities(
-	  		data => {
-          vm.activities = data.usuarios; 
-          console.log(data);
-        },
-	  		error => console.log(error)
+  		data => {
+        vm.activities = data.usuarios;
+        console.log(data);
+      },
+  		error => console.log(error)
 	);
-
-  vm.postActivity = () => ActivitiesService.putActivity(
-      response => console.log(response),
-      error    => console.log(error)
-  );
 
   vm.deleteActivity = (id) => ActivitiesService.deleteActivity(
       id,
-      error    => console.log(error)
+      ()     => vm.getActivities(),
+      error  => console.log(error)
   );
 
-  vm.handleDeleteActivity = ($event) => { 
+  vm.handleDeleteActivity = ($event) => {
     let activityId = $event.currentTarget.attributes['data-activity-id'].value;
     vm.deleteActivity(activityId);
   };
