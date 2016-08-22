@@ -1,5 +1,6 @@
 
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compileProvider) {
+function OnConfig($stateProvider, $locationProvider,
+ $urlRouterProvider, $compileProvider) {
   'ngInject';
 
   if (process.env.NODE_ENV === 'production') {
@@ -13,7 +14,10 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     url: '/',
     controller: 'ExampleCtrl as home',
     templateUrl: 'home.html',
-    title: 'Home'
+    title: 'Home',
+    onEnter: function(){
+      console.log('Home view entered');
+    }
   });
 
   $stateProvider

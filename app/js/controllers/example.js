@@ -1,4 +1,4 @@
-function ExampleCtrl(UsersService) {
+function ExampleCtrl(UsersService, $rootScope, $state) {
   'ngInject'
 
   // ViewModel
@@ -22,6 +22,17 @@ function ExampleCtrl(UsersService) {
       response => console.log(response),
       error    => console.log(error)
   );
+
+  if(!$rootScope.session)
+    $state.go('Login');
+    else if($rootScope.session.roles[0].id == 1)
+    $state.go('IndexGrupos');
+  else if($rootScope.session.roles[0].id == 2)
+    $state.go('IndexGrupos');
+  else if($rootScope.session.roles[0].id == 3)
+    $state.go('IndexActividades');
+  else
+    $state.go('Login');
 }
 
 export default {
