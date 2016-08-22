@@ -90,8 +90,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
 
   $stateProvider
   .state('Registrar', {
-    url: '/',
-    controller: 'ExampleCtrl as ctrl',
+    url: '/register',
+    controller: 'RegisterCtrl as ctrl',
     templateUrl: 'registrar.html',
     title: 'Registrar'
   });
