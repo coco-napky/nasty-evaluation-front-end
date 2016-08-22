@@ -1,11 +1,7 @@
 <body class="card-panel grey lighten-5">
-	<div class="section"></div>
 	<main>
 		<center>
 			<div class="flow-text"><i class="large material-icons">perm_identity</i><br> Login</div>
-			<div class="section"></div>
-			<div class="section"></div>
-
 			<div class="container">
 				<div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
@@ -17,14 +13,14 @@
 
 						<div class='row'>
 							<div class='input-field col s12'>
-								<input class='validate' type='email' name='email' id='email' />
+								<input class='validate' type='email' name='email' id='email' ng-model="ctrl.email"/>
 								<label for='email'><i class="small material-icons">email</i>Introduce tu e-mail</label>
 							</div>
 						</div>
 
 						<div class='row'>
 							<div class='input-field col s12'>
-								<input class='validate' type='password' name='password' id='password' />
+								<input class='validate' type='password' name='password' id='password' ng-model="ctrl.password"/>
 								<label for='password'><i class="small material-icons">vpn_key</i>Introduce tu contraseña</label>
 							</div>
 							<label style='float: right;'>
@@ -35,7 +31,7 @@
 						<br />
 						<center>
 							<div class='row'>
-								<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect blue-grey'>Iniciar</button>
+								<button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect blue-grey' ng-click='ctrl.onClickHandler()'>Iniciar Secion</button>
 							</div>
 						</center>
 					</form>
