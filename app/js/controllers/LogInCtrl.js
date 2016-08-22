@@ -1,39 +1,34 @@
-function LogInCtrl(UsersService) {
+function LogInCtrl(UsersService, $rootScope, $state) {
   'ngInject'
 
   // ViewModel
   const vm = this;
-
   vm.password = '';
-  vm.user = [];
+  vm.users = [];
   vm.activeUser = '';
   vm.email = '';
-
+  console.log($rootScope);
   vm.getUsers = () => {
-    
-    UsersService.getUsers(
-      data => {
-        vm.user=data.users;
-        console.log(data);
 
-        for (var i = 0; i < data.usuario.length; i++) {
-           console.log(data.usuario[i].correo);
-            if(email == data.usuario[i].correo){
-              console.log('Es igual');
-            }
-        }
-           
-      },
-      
-      error    => console.log(error)
+    UsersService.getUsers(
+      data  => {vm.users = data.usuario; console.log(data)},
+      error => console.log(error)
       );
   };
 
   vm.onClickHandler = () =>
   {
-      vm.getUsers();  
+    for (let i = 0; i < vm.users.length; ++i) {
+      if(vm.users[i].contrasena == vm.password &&
+         vm.users[i].correo == vm.email){
+         $rootScope.session = vm.users[i];
+       $state.go('Home');
+      }
+    }
   };
-
+  if($rootScope.session)
+        $state.go('Home');
+  vm.getUsers();
 }
 
   export default {
