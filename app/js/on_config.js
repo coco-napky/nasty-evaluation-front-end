@@ -16,6 +16,80 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'Home'
   });
 
+    $stateProvider
+  .state('Login', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'login.html',
+    title: 'Login'
+  });
+
+    $stateProvider
+  .state('CrearActividad', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'crear_actividad.html',
+    title: 'CrearActividad'
+  });
+
+   $stateProvider
+  .state('administrador', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'administrador.html',
+    title: 'Administrador'
+  });
+
+    $stateProvider
+  .state('CrearGrupo', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'crear_grupo.html',
+    title: 'CrearGrupo'
+  });
+
+      $stateProvider
+  .state('EditarPerfil', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'editar_perfil.html',
+    title: 'EditarPerfil'
+  });
+
+        $stateProvider
+  .state('Evaluacion', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'evaluacion.html',
+    title: 'Evaluacion'
+  });
+
+         $stateProvider
+  .state('IndexActividades', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'index_actividades.html',
+    title: 'IndexActividades'
+  });
+
+        $stateProvider
+  .state('IndexActividadesEstudiantes', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'index_actividades_estudiante.html',
+    title: 'IndexActividadesEstudiantes'
+  });
+
+          $stateProvider
+  .state('IndexGrupos', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'index_grupos.html',
+    title: 'IndexGrupos'
+  });
+
+
+
   $urlRouterProvider.otherwise('/');
 
 }
