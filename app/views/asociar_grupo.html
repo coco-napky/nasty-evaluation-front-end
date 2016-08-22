@@ -17,11 +17,11 @@
                           </select>
                       </div>
                       <div class="row">
-                          <label>Usuario</label>
-                          <select class="browser-default" ng-model="ctrl.userId">
+                          <label>Actividad</label>
+                          <select class="browser-default" ng-model="ctrl.activityId">
                             <option value="" disabled selected>Choose your option</option>
-                            <option ng-repeat="user in ctrl.users" value="{{user.id}}">
-                                {{user.nombre}}
+                            <option ng-repeat="actividad in ctrl.activities" value="{{actividad.id}}">
+                                {{actividad.nombre}}
                             </option>
                           </select>
                       </div>
