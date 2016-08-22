@@ -1,16 +1,3 @@
-<!doctype html>
-<html>
-
-<head> 
-
-  <meta charset="UTF-8">
-  <title> B(Nasty)File - Nasty evaluation </title>
-  <link href="materialize/css/materialize.css" rel="stylesheet" />
-  <link href="materialize/css/materialize.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-</head>
-
 <body>
 	
 
@@ -27,17 +14,11 @@
     </tr>
 
 
-    <tr>
-      <td>Carlos Castro</td>
-      <td>Maestro</td>
+    <tr ng-repeat="user in ctrl.users">
+      <td>{{user.nombre}}</td>
+      <td>{{user.roles[0].id == 2 ? 'Maestro' : 'Alumno'}}</td>
       <td><a class="btn-floating btn-small waves-effect waves-light modal-trigger blue" href="#modal1"><i class="material-icons">mode_edit</i></a></td>
-      <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-    </tr>
-    <tr>
-      <td>David Chavarria</td>
-      <td>Estudiante</td>
-      <td><a class="btn-floating btn-small waves-effect waves-light modal-trigger blue" href="#modal1"><i class="material-icons">mode_edit</i></a></td>
-      <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
+      <td><a class="btn-floating btn-small waves-effect waves-light red" ng-click="ctrl.handleDeleteUser($event)" data-user-id="{{user.id}}" ><i class="material-icons">delete</i></a></td>
     </tr>
 </table>
 
@@ -45,7 +26,7 @@
 
 <div id="modal1" class="modal">
   <div class="modal-content">
-    <h4><img src="images/pokedex.png">&nbsp;Editar Usuario</h4>
+    <h4>&nbsp;Editar Usuario</h4>
     <div class="row">
       <form class="col s12">
         <div class="row">
@@ -94,10 +75,4 @@
 </div>
 </div>
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
-<script src="js/index.js"></script>    
-
 </body>
-
-</html>

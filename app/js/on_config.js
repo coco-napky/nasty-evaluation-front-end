@@ -34,8 +34,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
 
   $stateProvider
   .state('administrador', {
-    url: '/',
-    controller: 'ExampleCtrl as ctrl',
+    url: '/admin',
+    controller: 'AdminCtrl as ctrl',
     templateUrl: 'administrador.html',
     title: 'Administrador'
   });
