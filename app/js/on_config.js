@@ -16,7 +16,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'Home'
   });
 
-    $stateProvider
+  $stateProvider
   .state('Login', {
     url: '/',
     controller: 'ExampleCtrl as ctrl',
@@ -24,15 +24,15 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'Login'
   });
 
-    $stateProvider
+  $stateProvider
   .state('CrearActividad', {
-    url: '/',
-    controller: 'ExampleCtrl as ctrl',
+    url: '/crear-actividad',
+    controller: 'AgregarActividadController as ctrl',
     templateUrl: 'crear_actividad.html',
     title: 'CrearActividad'
   });
 
-   $stateProvider
+  $stateProvider
   .state('administrador', {
     url: '/',
     controller: 'ExampleCtrl as ctrl',
@@ -40,7 +40,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'Administrador'
   });
 
-    $stateProvider
+  $stateProvider
   .state('CrearGrupo', {
     url: '/crear-grupo',
     controller: 'AgregarGrupoCtrl as ctrl',
@@ -48,7 +48,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'CrearGrupo'
   });
 
-      $stateProvider
+  $stateProvider
   .state('EditarPerfil', {
     url: '/',
     controller: 'ExampleCtrl as ctrl',
@@ -56,7 +56,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'EditarPerfil'
   });
 
-        $stateProvider
+  $stateProvider
   .state('Evaluacion', {
     url: '/',
     controller: 'ExampleCtrl as ctrl',
@@ -64,7 +64,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'Evaluacion'
   });
 
-         $stateProvider
+  $stateProvider
   .state('IndexActividades', {
     url: '/activity',
     controller: 'ActivityCtrl as ctrl',
@@ -72,7 +72,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'IndexActividades'
   });
 
-        $stateProvider
+  $stateProvider
   .state('IndexActividadesEstudiantes', {
     url: '/',
     controller: 'ExampleCtrl as ctrl',
@@ -80,7 +80,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'IndexActividadesEstudiantes'
   });
 
-          $stateProvider
+  $stateProvider
   .state('IndexGrupos', {
     url: '/groups',
     controller: 'GroupCtrl as ctrl',
@@ -88,7 +88,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'IndexGrupos'
   });
 
-           $stateProvider
+  $stateProvider
   .state('Registrar', {
     url: '/',
     controller: 'ExampleCtrl as ctrl',
