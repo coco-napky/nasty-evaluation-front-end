@@ -1,84 +1,28 @@
-<!doctype html>
-<html ng-app>
+<div style="margin-top: 5rem" class="container">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card-panel grey lighten-5">
+                <div class="row center">
+                    <h2>Agregar Grupo</h1>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="name" type="text" class="validate">
+                          <label for="name">Nombre</label>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div class='row'>
+                    <button type='submit' name='btn_login'
+                        class='col s12 btn btn-large waves-effect blue-grey center'>
+                        Crear Grupo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<head> 
-
-	<meta charset="UTF-8">
-	<title> B(Nasty)File - Nasty evaluation </title>
-	<link href="materialize/css/materialize.css" rel="stylesheet" />
-	<link href="materialize/css/materialize.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-</head>
-
-<body class="card-panel grey lighten-5">
-	<main>
-		<center>
-			<div class="flow-text">Crear Grupo</div>
-
-			<div class="container">
-
-					<form class="col s5" method="post">
-						<div class='row'>
-							<div class='col s5'>
-							</div>
-						</div>
-
-						<div class='row'>
-							<div class='input-field col s5'>
-								<input class='validate'  name='nombre' id='nombre' />
-								<label for='email'>Nombre Grupo: </label>
-							</div>
-						</div>
-
-						<div class='row'>
-							<div class='input-field col s5'>
-								<input class='validate'  name='integrante' id='integrante' />
-								<label for='email'>Integrante 1: </label>
-							</div>
-						</div>
-						<div class='row'>
-							<div class='input-field col s5'>
-								<input class='validate'  name='integrante' id='integrante' />
-								<label for='email'>Integrante 2: </label>
-							</div>
-						</div>
-						<div class='row'>
-							<div class='input-field col s5'>
-								<input class='validate'  name='integrante' id='integrante' />
-								<label for='email'>Integrante 3: </label>
-							</div>
-						</div>
-						<div class='row'>
-							<div class='input-field col s5'>
-								<input class='validate'  name='integrante' id='integrante' />
-								<label for='email'>Integrante 4: </label>
-							</div>
-						</div>
-						<div class='row'>
-							<div class='input-field col s5'>
-								<input class='validate'  name='integrante' id='integrante' />
-								<label for='email'>Integrante 5: </label>
-							</div>
-						</div>
-
-						<br />
-						<center>
-							<div class='row'>
-								<button type='submit' name='btn_login' class='col s4 btn btn-large waves-effect blue-grey center'>Crear Grupo</button>
-							</div>
-						</center>
-					</form>
-				
-			</div>
-		</center>
-
-		<div class="section"></div>
-		<div class="section"></div>
-	</main>
-
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
-</body>
-
-</html>
