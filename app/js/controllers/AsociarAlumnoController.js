@@ -16,7 +16,10 @@ function AsociarAlumnoController(GroupsService, UsersService) {
 
   vm.getUsers = () => UsersService.getUsers(
         data => {
-          vm.users = data.usuario;
+          vm.users = data.usuario.filter( user => {
+            let rol = user.roles[0];
+            return rol && rol.id === 3
+          });;
           console.log(vm.users);
         },
         error => console.log(error)
