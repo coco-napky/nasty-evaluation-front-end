@@ -82,8 +82,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
 
           $stateProvider
   .state('IndexGrupos', {
-    url: '/',
-    controller: 'ExampleCtrl as home',
+    url: '/groups',
+    controller: 'GroupCtrl as groupctrl',
     templateUrl: 'index_grupos.html',
     title: 'IndexGrupos'
   });
