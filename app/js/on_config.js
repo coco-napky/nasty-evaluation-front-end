@@ -43,7 +43,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     $stateProvider
   .state('CrearGrupo', {
     url: '/crear-grupo',
-    controller: 'ExampleCtrl as home',
+    controller: 'AgregarGrupoCtrl as ctrl',
     templateUrl: 'crear_grupo.html',
     title: 'CrearGrupo'
   });

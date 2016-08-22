@@ -9,17 +9,31 @@
                     <form class="col s12">
                       <div class="row">
                         <div class="input-field col s12">
-                          <input id="name" type="text" class="validate">
+                          <input id="name" type="text" class="validate" ng-model="ctrl.nombre">
                           <label for="name">Nombre</label>
                         </div>
                       </div>
                     </form>
                 </div>
+                <div class="row">
+                    <ul class="collection with-header">
+                        <li class="collection-header"><h4>Grupos</h4></li>
+                        <li class="collection-item" ng-repeat="group in ctrl.groups">{{group.nombre}}</li>
+                    </ul>
+                </div>
                 <div class='row'>
                     <button type='submit' name='btn_login'
-                        class='col s12 btn btn-large waves-effect blue-grey center'>
-                        Crear Grupo
+                        class='col s12 btn btn-large waves-effect blue-grey center'
+                        ng-click="ctrl.handlePostGroup()">
+                        SUBMIT
                     </button>
+                </div>
+                <div class='row'>
+                    <a type='submit' name='btn_login'
+                        class='col s12 btn btn-large waves-effect blue-grey center'
+                        href="/groups">
+                        Back
+                    </a>
                 </div>
             </div>
         </div>
