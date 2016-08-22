@@ -7,89 +7,39 @@
   <nav  class="blue">
     <div class="nav-wrapper">
       <ul class="left hide-on-med-and-down">
-        <li><a href="index_actividades.html">Actividades</a></li>
-        <li><a href="index_grupos.html">Grupos</a></li>
-        <a class="btn-floating btn-large waves-effect waves-light blue-grey brand-logo right" href="crear_actividad.html">
-        <i class="material-icons">mode_edit</i>
+        <li><a href="/activity">Actividades</a></li>
+        <li><a href="/groups">Grupos</a></li>
+        <a class="btn-floating btn-large waves-effect waves-light blue-grey brand-logo right" href="/crear-actividad">
+          <i class="material-icons">mode_edit</i>
         </a>
       </ul>
     </div>
   </nav>
-
-  <div class="row"> 
-    <div class="col s10 m4" ng-repeat="act in ctrl.activities" ng-cloak> 
+  <div class="row">
+    <div class="col s10 m4" ng-repeat="act in ctrl.activities" ng-cloak>
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-                <div align="right">
-                  <a class="btn-floating btn-small waves-effect waves-light modal-trigger green" ng-click="modalTrigger()" href="#modalEditar">
-                    <i class="material-icons">mode_edit</i>
-                  </a>
-                  <a class="btn-floating btn-small waves-effect waves-light red" ng-click="" data-activity-id="{{activity.id}}">
-                    <i class="material-icons">delete</i>
-                  </a>
-                </div>
-                <span class="card-title">{{ act.nombre }}</span>
-                <table>
-                  <tbody>
-                    <tr ng-repeat="grupos in act.usuarios">
-                      <th>
-                        <p>{{grupos.usuarios.nombre}} ITEM</p>
-                      </th>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          <div align="right">
+            <a class="btn-floating btn-small waves-effect waves-light modal-trigger green" ng-click="modalTrigger()" href="#modalEditar">
+              <i class="material-icons">mode_edit</i>
+            </a>
+            <a class="btn-floating btn-small waves-effect waves-light red"
+               ng-click="ctrl.handleDeleteActivity($event)" data-activity-id="{{act.id}}">
+              <i class="material-icons">delete</i>
+            </a>
+         </div>
+        <span class="card-title">{{ act.nombre }}</span>
+          <table>
+              <tbody>
+                <tr ng-repeat="grupo in act.grupos">
+                  <th>
+                    <p>{{grupo.nombre}}</p>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-
-
-        <!--Modal-->
-        <div id="modalCrear" class="modal">
-          <div class="modal-content">
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="nombre_actividad" type="text" class="validate">
-                    <label for="nombre_actividad">Nombre Actividad: {{ event[0].name }}</label>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <a class='dropdown-button btn blue' href='#' data-activates='dropdown1'>Añadir Grupo</a>
-                      <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">{{event[0].groups[0]}}</a></li>
-                        <li><a href="#!">{{event[0].groups[1]}}</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#!">{{event[0].groups[2]}}</a></li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <table>
-                    <tr>
-                      <td data-field="id">Nombre Grupo: {{ event[0].name }}</td>
-                    </tr>
-
-                    <tr>
-                      <td>{{ event[0].groups[0] }}</td>
-                      <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                    </tr>
-                    <tr>
-                      <td>{{ event[0].groups[1] }}</td>
-                      <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                    </tr>
-                    <tr>
-                      <td>{{ event[0].groups[2] }}</td>
-                      <td><a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                    </tr>
-
-                  </table>
-
-                </form>
-              </div>
-              <div class="modal-footer">
-                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-              </div>
-            </div>
-          </body>
+      </div>
+    </div>
+</body>
