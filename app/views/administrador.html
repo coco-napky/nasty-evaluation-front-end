@@ -1,78 +1,81 @@
 <body>
 	
+  <!-- <div align="center"><img src="images/administrador.png"></div> -->
+  <div><a class="btn-floating btn-large waves-effect waves-light grey right modal-trigger" href="#modal2"><i class="material-icons">mode_edit</i></a></div>
 
- <div align="right" class="blue"><a class="btn btn-large waves-effect waves-light modal-trigger blue" href="#modal2">Crear nuevo usuario</a></div>
 
+  <table class="striped">
 
- <table class="striped">
- 
     <tr>
-      <th data-field="nombre"><font color="blue">Nombre</font></th>
-      <th data-field="tipo"><font color="blue">Tipo de usuario</font></th>
-      <th data-field="actualizar"><font color="blue">Update</font></th>
-      <th data-field="borrar"><font color="blue">Delete</font></th>
+      <th data-field="nombre"><font color="grey">Nombre</font></th>
+      <th data-field="tipo"><font color="grey">Tipo de usuario</font></th>
+      <th data-field="actualizar"><font color="grey">Update</font></th>
+      <th data-field="borrar"><font color="grey">Delete</font></th>
     </tr>
-
 
     <tr ng-repeat="user in ctrl.users">
       <td>{{user.nombre}}</td>
-      <td>{{user.roles[0].id == 2 ? 'Maestro' : 'Alumno'}}</td>
+      <td>{{user.roles[0].id == 3 ? 'Alumno' : 'Maestro'}}</td>
       <td><a class="btn-floating btn-small waves-effect waves-light modal-trigger blue" href="#modal1"><i class="material-icons">mode_edit</i></a></td>
       <td><a class="btn-floating btn-small waves-effect waves-light red" ng-click="ctrl.handleDeleteUser($event)" data-user-id="{{user.id}}" ><i class="material-icons">delete</i></a></td>
     </tr>
-</table>
+  </table>
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>&nbsp;Editar Usuario</h4>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="nombre" type="text" class="validate">
+              <label for="nombre">Nombre</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="tipo" type="text" class="validate">
+              <label for="tipo">Tipo de usuario</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    </div>
+  </div>
 
 
-
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>&nbsp;Editar Usuario</h4>
-    <div class="row">
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+     <h4>&nbsp;Crear usuario</h4>
+     <div class="row">
       <form class="col s12">
         <div class="row">
           <div class="input-field col s6">
-            <input id="nombre" type="text" class="validate">
+            <input id="nombre" type="text" class="validate" ng-model="ctrl.nombre">
             <label for="nombre">Nombre</label>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="tipo" type="text" class="validate">
-            <label for="tipo">Tipo de usuario</label>
-          </div>
+        <div>
+
+          <label>Tipo de Usuario</label>
+          <select class="browser-default"  >
+            <option value="" disabled selected>Tipo</option>
+            <option>
+              Maestro
+            </option>
+          </select>
+
+
         </div>
       </form>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="ctrl.handlePostUser()">Aceptar</a>
   </div>
-</div>
-
-
-<div id="modal2" class="modal">
-  <div class="modal-content">
-   <h4>&nbsp;Crear usuario</h4>
-   <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="nombre" type="text" class="validate">
-          <label for="nombre">Nombre</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="tipo" type="text" class="validate">
-          <label for="tipo">Tipo de usuario</label>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-<div class="modal-footer">
-  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-</div>
 </div>
 
 </body>
