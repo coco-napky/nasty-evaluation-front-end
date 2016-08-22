@@ -32,8 +32,10 @@ function LogInCtrl(UsersService, $rootScope, $state) {
     }
   };
 
-  if($rootScope.session)
-        $state.go('Home');
+  window.localStorage['id'] = null;
+  window.localStorage['name'] = null;
+  window.localStorage['role'] = null;
+
   vm.getUsers();
 }
 

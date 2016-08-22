@@ -28,7 +28,7 @@ function ExampleCtrl(UsersService, $rootScope, $state) {
   if(!role)
     $state.go('Login');
     else if(role == 1)
-    $state.go('IndexGrupos');
+    $state.go('administrador');
   else if(role == 2)
     $state.go('IndexGrupos');
   else if(role == 3)
