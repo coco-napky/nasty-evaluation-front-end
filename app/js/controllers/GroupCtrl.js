@@ -8,29 +8,20 @@ function GroupCtrl(GroupsService) {
 
   vm.getGroups = () => GroupsService.getGroups(
 	  		data => {
-          vm.groups = data.grupo; 
+          vm.groups = data.grupo;
           console.log(vm.groups);
         },
 	  		error => console.log(error)
 	);
 
-  vm.postGroup = (nombre) => GroupsService.putGroup(
-      {
-        id: 0,
-        nombre: nombre
-      },
-      response => console.log(response),
-      error    => console.log(error)
-  );
-
   vm.deleteGroup = (id) => GroupsService.deleteGroup(
       id,
-      response => vm.getGroups(),
+      () => vm.getGroups(),
       error    => console.log(error)
   );
 
-  vm.handleDeleteGroup = ($event) => { 
-    let groupId = $event.currentTarget.attributes["data-group-id"].value;
+  vm.handleDeleteGroup = ($event) => {
+    let groupId = $event.currentTarget.attributes['data-group-id'].value;
     vm.deleteGroup(groupId);
   };
 
