@@ -99,8 +99,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
   $stateProvider
   .state('AsociarAlumno', {
     url: '/asociar-alumno',
-    controller: 'ExampleCtrl as ctrl',
-    templateUrl: 'registrar.html',
+    controller: 'AsociarAlumnoController as ctrl',
+    templateUrl: 'asociar_alumno.html',
     title: 'Registrar'
   });
 

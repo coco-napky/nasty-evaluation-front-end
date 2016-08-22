@@ -1,0 +1,47 @@
+<div style="margin-top: 5rem" class="container">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card-panel grey lighten-5">
+                <div class="row center">
+                    <h2>Asociar Alumno</h1>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                          <label>Grupo</label>
+                          <select class="browser-default" ng-model="groupId">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1" ng-repeat="group in ctrl.groups" value="{{user.id}}">
+                                {{group.nombre}}
+                            </option>
+                          </select>
+                      </div>
+                      <div class="row">
+                          <label>Usuario</label>
+                          <select class="browser-default" ng-model="userId">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option ng-repeat="user in ctrl.users" value="{{user.id}}">
+                                {{user.nombre}}
+                            </option>
+                          </select>
+                      </div>
+                    </form>
+                </div>
+                <div class='row'>
+                    <button type='submit' name='btn_login'
+                        class='col s12 btn btn-large waves-effect blue-grey center'
+                        ng-click="ctrl.handlePostGroup()">
+                        SUBMIT
+                    </button>
+                </div>
+                <div class='row'>
+                    <a type='submit' name='btn_login'
+                        class='col s12 btn btn-large waves-effect blue-grey center'
+                        href="/groups">
+                        Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
