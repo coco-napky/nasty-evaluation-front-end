@@ -104,6 +104,13 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'Registrar'
   });
 
+  $stateProvider
+  .state('AsociarGrupo', {
+    url: '/asociar-grupo',
+    controller: 'AsociarAlumnoController as ctrl',
+    templateUrl: 'asociar_grupo.html',
+    title: 'Registrar'
+  });
   $urlRouterProvider.otherwise('/');
 
 }
