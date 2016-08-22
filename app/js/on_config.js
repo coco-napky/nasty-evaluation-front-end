@@ -88,7 +88,13 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $compil
     title: 'IndexGrupos'
   });
 
-
+           $stateProvider
+  .state('Registrar', {
+    url: '/',
+    controller: 'ExampleCtrl as home',
+    templateUrl: 'registrar.html',
+    title: 'Registrar'
+  });
 
   $urlRouterProvider.otherwise('/');
 
