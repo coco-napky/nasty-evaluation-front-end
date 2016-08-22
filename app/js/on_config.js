@@ -111,7 +111,7 @@ function OnConfig($stateProvider, $locationProvider,
   $stateProvider
   .state('AsociarGrupo', {
     url: '/asociar-grupo',
-    controller: 'AsociarAlumnoController as ctrl',
+    controller: 'AsociarGrupoController as ctrl',
     templateUrl: 'asociar_grupo.html',
     title: 'Registrar'
   });
