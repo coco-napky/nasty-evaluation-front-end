@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card-panel grey lighten-5">
+                <div class="row center">
+                    <h3>Credenciales</h3>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="Satan" id="nombre" type="text" class="validate"
+                                 ng-model="ctrl.user">
+                          <label for="nombre">Nombre</label>
+                        </div>
+                      </div>
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="satan@satan.com" id="email" type="email" class="validate" ng-model="ctrl.email">
+                          <label for="email">Correo</label>
+                        </div>
+                      </div>
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input placeholder="*******" id="password" type="text" class="validate" ng-model="ctrl.password">
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <div class='row'>
+                    <button type='submit' name='btn_login'
+                        class='col s12 btn btn-large waves-effect blue-grey center'
+                        ng-click="ctrl.onClickHandler()">
+                        SUBMIT
+                    </button>
+                </div>
+                <div class='row'>
+                    <a type='submit' name='btn_login'
+                        class='col s12 btn btn-large waves-effect blue-grey center'
+                        href="/">
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

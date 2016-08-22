@@ -14,10 +14,7 @@ function OnConfig($stateProvider, $locationProvider,
     url: '/',
     controller: 'ExampleCtrl as home',
     templateUrl: 'home.html',
-    title: 'Home',
-    onEnter: function(){
-      console.log('Home view entered');
-    }
+    title: 'Home'
   });
 
   $stateProvider
@@ -114,6 +111,14 @@ function OnConfig($stateProvider, $locationProvider,
     controller: 'AsociarGrupoController as ctrl',
     templateUrl: 'asociar_grupo.html',
     title: 'Registrar'
+  });
+
+  $stateProvider
+  .state('Credenciales', {
+    url: '/cambiar-credenciales',
+    controller: 'CredencialesController as ctrl',
+    templateUrl: 'cambiar_credenciales.html',
+    title: 'Credenciales'
   });
   $urlRouterProvider.otherwise('/');
 

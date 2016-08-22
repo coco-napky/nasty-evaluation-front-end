@@ -23,13 +23,15 @@ function ExampleCtrl(UsersService, $rootScope, $state) {
       error    => console.log(error)
   );
 
-  if(!$rootScope.session)
+  let role = window.localStorage['role'];
+
+  if(!role)
     $state.go('Login');
-    else if($rootScope.session.roles[0].id == 1)
+    else if(role == 1)
     $state.go('IndexGrupos');
-  else if($rootScope.session.roles[0].id == 2)
+  else if(role == 2)
     $state.go('IndexGrupos');
-  else if($rootScope.session.roles[0].id == 3)
+  else if(role == 3)
     $state.go('IndexActividades');
   else
     $state.go('Login');

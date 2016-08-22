@@ -22,10 +22,16 @@ function LogInCtrl(UsersService, $rootScope, $state) {
       if(vm.users[i].contrasena == vm.password &&
          vm.users[i].correo == vm.email){
          $rootScope.session = vm.users[i];
+          window.localStorage['id'] = vm.users[i].id;
+          window.localStorage['name'] = vm.users[i].name;
+
+          if(vm.users[i].roles[0])
+            window.localStorage['role'] = vm.users[i].roles[0].id;
        $state.go('Home');
       }
     }
   };
+
   if($rootScope.session)
         $state.go('Home');
   vm.getUsers();
