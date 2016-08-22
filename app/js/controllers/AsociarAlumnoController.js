@@ -22,9 +22,15 @@ function AsociarAlumnoController(GroupsService, UsersService) {
         error => console.log(error)
   );
 
-  vm.submitHandler = () => {
-    console.log('checkpoint');
-  }
+  vm.addUserToGroup = (userId, groupId) => GroupsService.addUserToGroup(
+      userId,
+      groupId,
+      response => console.log(response),
+      error    => console.log(error)
+
+  );
+
+  vm.submitHandler = () => vm.addUserToGroup(vm.userId, vm.groupId);
 
   vm.getGroups();
   vm.getUsers();
