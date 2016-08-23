@@ -122,7 +122,7 @@ function OnConfig($stateProvider, $locationProvider,
   });
 
     $stateProvider
-  .state('index.alumno', {
+  .state('alumno', {
     url: '/alumno',
     controller: 'AlumnoController as ctrl',
     templateUrl: 'index_alumno.html',

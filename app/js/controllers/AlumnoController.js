@@ -29,8 +29,7 @@ function AlumnoController(UsersService,GroupsService, $state) {
   vm.getGroups();
 
   let role = window.localStorage['role'];
-    if(!role || role != 3 )
-      $state.go('Home');
+  console.log('Role ',role);
 }
 
 
