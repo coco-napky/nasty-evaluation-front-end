@@ -6,11 +6,11 @@ function AlumnoController(UsersService,GroupsService, $state) {
 
   vm.groups = [];
 
-  vm.getGroups = () => UsersService.getUserActivitiesById(
+  vm.getGroups = () => UsersService.getGrupos(
         window.localStorage['role'],
 	  		data => {
-          vm.groups = data.actividades;
-          console.log('Alumno Groups :', data);
+          vm.groups = data.grupos;
+          console.log('Alumno Groups :', vm.groups);
         },
 	  		error => console.log(error)
 	);

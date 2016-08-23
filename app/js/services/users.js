@@ -14,8 +14,8 @@ function UsersService($http) {
       .success(onSuccess)
       .error(onError);
 
-  service.getUserActivitiesById = (id, onSuccess, onError) =>
-      $http.get(`${baseUrl}/getActividades?UsuarioId=${id}`)
+  service.getGrupos = (id, onSuccess, onError) =>
+      $http.get(`${baseUrl}/getGruposActividades?UsuarioId=${id}`)
       .success(onSuccess)
       .error(onError);
 
