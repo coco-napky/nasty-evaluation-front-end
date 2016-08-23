@@ -120,6 +120,14 @@ function OnConfig($stateProvider, $locationProvider,
     templateUrl: 'cambiar_credenciales.html',
     title: 'Credenciales'
   });
+
+    $stateProvider
+  .state('index.alumno', {
+    url: '/alumno',
+    controller: 'AlumnoController as ctrl',
+    templateUrl: 'index_alumno.html',
+    title: 'Alumno'
+  });
   $urlRouterProvider.otherwise('/');
 
 }
