@@ -8,3 +8,11 @@ body {
   background-color: $background--light;
   padding: $half-space;
 }
+
+.pr {
+	position: relative;
+}
+
+.pa {
+	position: absolute;
+}
