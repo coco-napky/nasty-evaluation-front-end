@@ -1,15 +1,10 @@
 <body>
-  <div align="center">
-    <img src="images/maestros.png"/><i class="small material-icons">play_arrow</i>Actividades
-  </div>
-
   <!--Navbar-->
   <nav  class="blue">
     <div class="nav-wrapper">
       <ul class="left hide-on-med-and-down">
         <li><a href="/activity">Actividades</a></li>
         <li><a href="/groups">Grupos</a></li>
-        <li><a href="/asociar-alumno">Asociar Alumno</a></li>
         <li><a href="/asociar-grupo">Asociar Grupo</a></li>
         <li><a href="/cambiar-credenciales">Cambiar Credenciales</a></li>
         <a class="btn-floating btn-large waves-effect waves-light blue-grey brand-logo right" href="/crear-actividad"><i class="material-icons">mode_edit</i></a>
@@ -31,6 +26,7 @@
             </a>
          </div>
         <span class="card-title">{{ act.nombre }}</span>
+        <hr>
           <table>
               <tbody>
                 <tr ng-repeat="grupo in act.grupos">
