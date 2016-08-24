@@ -9,7 +9,6 @@ function OnRun($rootScope, AppSettings) {
       $rootScope.pageTitle += toState.title;
       $rootScope.pageTitle += ' \u2014 ';
     }
-    console.log(toState);
     $rootScope.pageTitle += AppSettings.appTitle;
   });
 
