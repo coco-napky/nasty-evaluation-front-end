@@ -1,4 +1,4 @@
-function ExampleCtrl(UsersService, $rootScope, $state) {
+function ExampleCtrl(UsersService) {
   'ngInject'
 
   // ViewModel

@@ -1,4 +1,4 @@
-function LogInCtrl(UsersService, $rootScope, $state) {
+function LogInCtrl(UsersService, $state) {
   'ngInject'
 
   // ViewModel
@@ -7,7 +7,7 @@ function LogInCtrl(UsersService, $rootScope, $state) {
   vm.users = [];
   vm.activeUser = '';
   vm.email = '';
-  console.log($rootScope);
+
   vm.getUsers = () => {
 
     UsersService.getUsers(
@@ -21,7 +21,6 @@ function LogInCtrl(UsersService, $rootScope, $state) {
     for (let i = 0; i < vm.users.length; ++i) {
       if(vm.users[i].contrasena == vm.password &&
          vm.users[i].correo == vm.email){
-         $rootScope.session = vm.users[i];
           window.localStorage['id'] = vm.users[i].id;
           window.localStorage['name'] = vm.users[i].name;
 

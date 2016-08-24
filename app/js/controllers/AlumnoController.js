@@ -9,7 +9,8 @@ function AlumnoController(UsersService,GroupsService, $state) {
   vm.getGroups = () => UsersService.getGrupos(
         window.localStorage['role'],
 	  		data => {
-          vm.groups = data.grupos;
+          vm.groups = data.actividades.grupos;
+          console.log('Alumno Groups :', data);
           console.log('Alumno Groups :', vm.groups);
         },
 	  		error => console.log(error)
@@ -21,15 +22,14 @@ function AlumnoController(UsersService,GroupsService, $state) {
       error    => console.log(error)
   );
 
-  vm.handleDeleteGroup = ($event) => {
+  vm.activityClickHandler = ($event) => {
     let groupId = $event.currentTarget.attributes['data-group-id'].value;
-    vm.deleteGroup(groupId);
+    let activityId = $event.currentTarget.attributes['data-activity-id'].value;
+    $state.go('evaluar', {group: groupId, activity: activityId});
+
   };
 
   vm.getGroups();
-
-  let role = window.localStorage['role'];
-  console.log('Role ',role);
 }
 
 

@@ -12,7 +12,7 @@ function CredencialesController(UsersService, $state) {
 
       UsersService.putUser(
       {
-        id: window.localStorage['role'],
+        id:  window.localStorage['id'],
         nombre: vm.user,
         correo: vm.email,
         contrasena: vm.password,

@@ -121,12 +121,20 @@ function OnConfig($stateProvider, $locationProvider,
     title: 'Credenciales'
   });
 
-    $stateProvider
+  $stateProvider
   .state('alumno', {
     url: '/alumno',
     controller: 'AlumnoController as ctrl',
     templateUrl: 'index_alumno.html',
     title: 'Alumno'
+  });
+
+  $stateProvider
+  .state('evaluar', {
+    url: '/evaluar?group&activity',
+    controller: 'EvaluarController as ctrl',
+    templateUrl: 'evaluar.html',
+    title: 'Evaluar'
   });
   $urlRouterProvider.otherwise('/');
 
