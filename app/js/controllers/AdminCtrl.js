@@ -7,10 +7,6 @@ function AdminCtrl(UsersService, $state, RolesService) {
   vm.users = [];
   vm.nombre = '';
   
-  
-  let role = window.localStorage['role'];
-    if(!role || role != 1 )
-      $state.go('Home');
 
 
   vm.getUsers = () => UsersService.getUsers(
@@ -38,10 +34,7 @@ function AdminCtrl(UsersService, $state, RolesService) {
   (
       usuarioId,
       rolId,      
-      response => {
-        addRoleToUser(response.id,3);
-        console.log(response)
-      },
+      response => vm.getUsers(),
       error    => console.log(error)
 
   );
@@ -51,7 +44,9 @@ function AdminCtrl(UsersService, $state, RolesService) {
         id: 0,
         nombre: nombre
       },
-      () => vm.getUsers(),
+      (response) => {
+        vm.addRoleToUser( response.id, 2);
+      },
       error    => console.log(error)
   );
 

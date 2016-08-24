@@ -59,8 +59,8 @@ function OnConfig($stateProvider, $locationProvider,
 
   $stateProvider
   .state('Evaluacion', {
-    url: '/',
-    controller: 'ExampleCtrl as ctrl',
+    url: '/evaluacion',
+    controller: 'EvaluacionCtrl as ctrl',
     templateUrl: 'evaluacion.html',
     title: 'Evaluacion'
   });
