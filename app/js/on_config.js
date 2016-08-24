@@ -11,7 +11,7 @@ let conditionalRoute = ($state) => {
       case 'Home':
         switch(role){
           case 1: $state.go('administrador'); break;
-          case 2: $state.go('indexGrupos'); break;
+          case 2: $state.go('indexActividades'); break;
           case 3: $state.go('alumno'); break;
           default: $state.go('login');; break;
         }
@@ -27,6 +27,7 @@ let conditionalRoute = ($state) => {
       case 'asociarGrupo':
       case 'CrearActividad':
       case 'CrearGrupo':
+      case 'notas':
         if(role != 2) $state.go('Home');
       break;
 
@@ -181,6 +182,16 @@ function OnConfig($stateProvider, $locationProvider,
     title: 'Evaluar',
     resolve: {conditionalRoute}
   });
+
+  $stateProvider
+  .state('notas', {
+    url: '/notas?group&activity',
+    controller: 'NotasController as ctrl',
+    templateUrl: 'notas.html',
+    title: 'Notas',
+    resolve: {conditionalRoute}
+  });
+
   $urlRouterProvider.otherwise('/');
 }
 

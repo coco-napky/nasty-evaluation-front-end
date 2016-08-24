@@ -10,13 +10,18 @@ function EvaluationsService($http) {
       .success(onSuccess)
       .error(onError);
 
+  service.getEvaluacionesByGroupAndActivity = (groupId, activityId,onSuccess, onError) =>
+      $http.get(`${baseUrl}/getNotasGrupo-Actividad?ActividadId=${activityId}&GrupoId=${groupId}`)
+      .success(onSuccess)
+      .error(onError);
+
   service.getEvaluationsByEvaluator = (evaluadoId, grupoId, actividadId, onSuccess, onError) =>
       $http.get(`${baseUrl}/getEvaluados?ActividadId=${actividadId}&GrupoId=${grupoId}&EvaluadorId=${evaluadoId}`)
       .success(onSuccess)
       .error(onError);
 
-  service.getEvaluationsByEvaluated = (evaluadoId, grupoId, actividadId, onSuccess, onError) =>
-      $http.get(`${baseUrl}/getNotas?ActividadId=${actividadId}&GrupoId=${grupoId}&EvaluadoId=${evaluadoId}`)
+  service.getEvaluationsByEvaluated = (evaluadorId, grupoId, actividadId, onSuccess, onError) =>
+      $http.get(`${baseUrl}/getNotas?ActividadId=${actividadId}&GrupoId=${grupoId}&EvaluadoId=${evaluadorId}`)
       .success(onSuccess)
       .error(onError);
 

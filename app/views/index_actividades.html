@@ -7,6 +7,7 @@
         <li><a href="/groups">Grupos</a></li>
         <li><a href="/asociar-grupo">Asociar Grupo</a></li>
         <li><a href="/cambiar-credenciales">Cambiar Credenciales</a></li>
+        <li><a href="/notas">Notas</a></li>
         <a class="btn-floating btn-large waves-effect waves-light blue-grey brand-logo right" href="/crear-actividad"><i class="material-icons">mode_edit</i></a>
       </ul>
     </div>
@@ -29,7 +30,9 @@
         <hr>
           <table>
               <tbody>
-                <tr ng-repeat="grupo in act.grupos">
+                <tr ng-repeat="grupo in act.grupos" class="hoverable"
+                    data-group-id="{{grupo.id}}"" data-activity-id="{{act.id}}"
+                    ng-click="ctrl.activityClickHandler($event)">
                   <th>
                     <p>{{grupo.nombre}}</p>
                   </th>
