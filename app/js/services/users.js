@@ -14,6 +14,11 @@ function UsersService($http) {
       .success(onSuccess)
       .error(onError);
 
+  service.getGrupos = (id, onSuccess, onError) =>
+      $http.get(`${baseUrl}/getGruposActividades?UsuarioId=${id}`)
+      .success(onSuccess)
+      .error(onError);
+
    // data : { "id": 0, "nombre": "string",
   // "correo": "string", "contrasena": "string", "activo": 1 }
   service.postUser = (data, onSuccess, onError) =>

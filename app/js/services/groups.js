@@ -11,6 +11,11 @@ function GroupsService($http) {
       .success(onSuccess)
       .error(onError);
 
+  service.getGroupById = (id, onSuccess, onError) =>
+      $http.get(`${baseUrl}/${id}`)
+      .success(onSuccess)
+      .error(onError);
+
   service.getGroupUsersById = (id, onSuccess, onError) =>
       $http.get(`${baseUrl}/${id}/usuarios`)
       .success(onSuccess)

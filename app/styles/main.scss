@@ -1,10 +1,22 @@
 @import 'vars';
 @import 'typography';
 @import './materialize/sass/master';
-
+@import 'cards';
 body {
   font-family: Helvetica, sans-serif;
   color: $font-color--dark;
   background-color: $background--light;
   padding: $half-space;
+}
+
+.pr {
+	position: relative;
+}
+
+.pa {
+	position: absolute;
+}
+
+.hoverable {
+	cursor: pointer;
 }

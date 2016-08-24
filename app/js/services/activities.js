@@ -11,6 +11,11 @@ function ActivitiesService($http) {
       .success(onSuccess)
       .error(onError);
 
+  service.getActivityById = (id, onSuccess, onError) =>
+      $http.get(`${baseUrl}/${id}`)
+      .success(onSuccess)
+      .error(onError);
+
   service.getActivityGroupsById = (id, onSuccess, onError) =>
       $http.get(`${baseUrl}/${id}/getUsuarios`)
       .success(onSuccess)

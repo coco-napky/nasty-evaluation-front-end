@@ -1,4 +1,4 @@
-function ActivityCtrl(ActivitiesService) {
+function ActivityCtrl(ActivitiesService, $state) {
   'ngInject'
 
   // ViewModel
@@ -23,6 +23,12 @@ function ActivityCtrl(ActivitiesService) {
   vm.handleDeleteActivity = ($event) => {
     let activityId = $event.currentTarget.attributes['data-activity-id'].value;
     vm.deleteActivity(activityId);
+  };
+
+  vm.activityClickHandler = ($event) => {
+    let groupId = $event.currentTarget.attributes['data-group-id'].value;
+    let activityId = $event.currentTarget.attributes['data-activity-id'].value;
+    $state.go('notas', {group: groupId, activity: activityId});
   };
 
   vm.getActivities();
