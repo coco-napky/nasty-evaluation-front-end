@@ -1,57 +1,50 @@
-function RegisterCtrl(UsersService, RolesService) {
+function RegisterCtrl(UsersService, RolesService, $state) {
   'ngInject'
 
   // ViewModel
-  const vm = this;
-
+  const vm    = this;
   vm.password = '';
-  vm.user = '';
-  vm.email = '';
+  vm.user     = '';
+  vm.email    = '';
 
   vm.postUsers = () => {
-    
-      UsersService.putUser(
+
+      UsersService.postUser(
       {
         id: 0,
         nombre: vm.user,
-        correo: vm.email,
-        contrasena: vm.password,
+        email: vm.email,
+        password: vm.password,
         activo: true
       },
-      usuario => vm.addRoleToUser(usuario.id, 3),
-      error    => console.log(error)
+        usuario => {
+          vm.addRoleToUser(
+            usuario.id,
+            3
+          );
+        },
+        error    => console.log(error)
       );
-
-      console.log(vm.user);
-      console.log(vm.email);
-      console.log(vm.password);
   };
 
   vm.onClickHandler = () => {
     if(vm.password.length > 0 && vm.user.length > 0 && vm.email.length > 0)
-    {
       vm.postUsers();
-    }else{
+    else
       console.log('Algun Dato Vacillo');
-    }
   };
 
-  vm.addRoleToUser = (userId, roleId) => {
-
-    RolesService.addRoleToUser(
-        userId, 
-        roleId, 
-        response => console.log(response),
-        error => console.log(error)
-      );
-
-  };
-
-        
+  vm.addRoleToUser = (userId, roleId) =>  RolesService.addRoleToUser
+  (
+    userId,
+    roleId,
+    ()    => $state.go('login'),
+    error => console.log(error)
+  );
 
 }
 
-  export default {
+export default {
     name: 'RegisterCtrl',
     fn: RegisterCtrl
-  };
+};

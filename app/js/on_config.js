@@ -39,8 +39,36 @@ let conditionalRoute = ($state) => {
   },1);
 }
 
+let tokenInterceptor = () => {
+
+  return {
+    request: function(config) {
+      let accessToken = window.localStorage['token'];
+      console.log(config);
+
+      if(accessToken)
+        config.headers.authorization = accessToken;
+
+      return config;
+    },
+
+    requestError: function(config) {
+      return config;
+    },
+
+    response: function(res) {
+      return res;
+    },
+
+    responseError: function(res) {
+      return res;
+    }
+
+  }
+}
+
 function OnConfig($stateProvider, $locationProvider,
- $urlRouterProvider, $compileProvider) {
+ $urlRouterProvider, $compileProvider, $httpProvider) {
   'ngInject';
 
   if (process.env.NODE_ENV === 'production') {
@@ -48,6 +76,8 @@ function OnConfig($stateProvider, $locationProvider,
   }
 
   $locationProvider.html5Mode(true);
+
+  $httpProvider.interceptors.push(tokenInterceptor);
 
   $stateProvider
   .state('Home', {

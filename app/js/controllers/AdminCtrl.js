@@ -6,7 +6,7 @@ function AdminCtrl(UsersService, $state, RolesService) {
 
   vm.users = [];
   vm.nombre = '';
-  
+
 
 
   vm.getUsers = () => UsersService.getUsers(
@@ -33,9 +33,9 @@ function AdminCtrl(UsersService, $state, RolesService) {
   vm.addRoleToUser = (usuarioId, rolId) => RolesService.addRoleToUser
   (
       usuarioId,
-      rolId,      
-      response => vm.getUsers(),
-      error    => console.log(error)
+      rolId,
+      ()    => vm.getUsers(),
+      error => console.log(error)
 
   );
 
