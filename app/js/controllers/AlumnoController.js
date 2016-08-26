@@ -5,9 +5,9 @@ function AlumnoController(UsersService,GroupsService, $state) {
   const vm = this;
 
   vm.groups = [];
-
+  vm.user   = UsersService.getSession();
   vm.getGroups = () => UsersService.getGrupos(
-        window.localStorage['role'],
+        vm.user.id,
 	  		data => {
           vm.groups = data.actividades.grupos;
           console.log('Alumno Groups :', data);
